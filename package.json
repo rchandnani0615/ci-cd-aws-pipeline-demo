@@ -18,7 +18,7 @@
     "jest-junit": "^13.0.0",
     "ts-jest": "^26.2.0",
     "ts-node": "^9.0.0",
-    "typescript": "~3.9.7"
+    "typescript": "v4.6.1-rc"
   },
   "dependencies": {
     "aws-cdk-lib": "2.8.0",
