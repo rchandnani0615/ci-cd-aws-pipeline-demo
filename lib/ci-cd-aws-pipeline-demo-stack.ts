@@ -27,7 +27,6 @@ export class CiCdAwsPipelineDemoStack extends cdk.Stack {
 
 
     devqa.addPre(new ShellStep("Run Unit Tests", { commands: ['npm install', 'npm test'] }));
-    devqa.addPost(new ManualApprovalStep('Manual approval before dev'));
 
     const devStage = pipeline.addStage(new MyPipelineAppStage(this, "dev", {
       env: { account: "091444724237", region: "us-east-1" }
@@ -37,7 +36,7 @@ export class CiCdAwsPipelineDemoStack extends cdk.Stack {
       env: { account: "091444724237", region: "us-east-1" }
     }));
 
-    qaStage.addPost(new ManualApprovalStep('Manual approval before dev'));
+    qaStage.addPost(new ManualApprovalStep('Manual approval before prod'));
 
     const prodStage = pipeline.addStage(new MyPipelineAppStage(this, "prod", {
       env: { account: "091444724237", region: "us-east-1" }
